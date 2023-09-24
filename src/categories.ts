@@ -4,11 +4,13 @@ import {
   Help,
   School,
   WorkOutline,
+  Collections,
 } from '@emotion-icons/material-outlined';
 import { CategoryData } from 'cv';
 import {
   education,
   experience,
+  gallery,
   lookingFor,
 } from '../assets/data/index';
 
@@ -33,5 +35,12 @@ export const categories: CategoryData[] = [
     type: 'list',
     data: lookingFor,
     order: { xs: 5, xl: 5 },
+  },
+  {
+    header: 'categories.gallery',
+    icon: Collections,
+    type: 'gallery',
+    data: gallery,
+    order: { xs: 6, xl: 6 },
   },
 ];

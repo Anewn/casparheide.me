@@ -1,6 +1,6 @@
 import { App } from 'cv';
 import type { NextPage } from 'next';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { profile } from '../../assets/data/index';
 import { enUs, nbNo } from '../../assets/lang';
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
       theme={theme}
       toggleTheme={() => dispatch(toggleTheme())}
       locale={locale}
-      updateLocale={(locale) => dispatch(updateLocale(locale))}
+      updateLocale={(locale: string) => dispatch(updateLocale(locale))}
     />
   );
 };
