@@ -36,11 +36,4 @@ export const categories: CategoryData[] = [
     data: lookingFor,
     order: { xs: 5, xl: 5 },
   },
-  {
-    header: 'categories.gallery',
-    icon: Collections,
-    type: 'gallery',
-    data: gallery,
-    order: { xs: 6, xl: 6 },
-  },
 ];
