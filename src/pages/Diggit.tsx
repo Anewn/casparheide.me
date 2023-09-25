@@ -10,7 +10,7 @@ const theme = useTheme();
    return (
     <div style={{ textAlign: 'center',fontWeight: 'bold', fontFamily: 'Montserrat, sans-serif', color: 'black'}}>
       <h1 style={{ color: 'black', fontWeight: 'bold', fontFamily: 'Montserrat, sans-serif', fontSize: '3.5rem', marginBottom: '10px' }}>Diggit</h1>
-      <p style={{color: 'black',  marginBottom: '-60px'  }}></p>
+      <p style={{color: 'black' }}></p>
       <Image
         alt="Diggit"
         src={picture}
