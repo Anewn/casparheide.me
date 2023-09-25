@@ -23,7 +23,7 @@ const Home: NextPage = () => {
     <App
       linkedIn="https://www.linkedin.com/in/caspar-ramstad-heide-46262252/"
       instagram="https://instagram.com/casparheide?igshid=MzRlODBiNWFlZA=="
-      email="casparheide@gmail.com"
+      headerLinks={['/PrivatMegleren', '/DifferPragma', '/Diggit', '/Bestatt']}
       image={<Image src={image} alt="Caspar Ramstad Heide" />}
       profile={profile}
       categories={categories}
