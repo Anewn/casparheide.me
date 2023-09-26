@@ -23,7 +23,7 @@ const Home: NextPage = () => {
     <App
       linkedIn="https://www.linkedin.com/in/caspar-ramstad-heide-46262252/"
       instagram="https://instagram.com/casparheide?igshid=MzRlODBiNWFlZA=="
-      headerLinks={['/PrivatMegleren', '/DifferPragma', '/Diggit', '/Bestatt']}
+      headerLinks={['/privatmegleren', '/differpragma', '/diggit', '/bestatt']}
       image={<Image src={image} alt="Caspar Ramstad Heide" />}
       profile={profile}
       categories={categories}
