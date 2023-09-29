@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { Header } from 'cv';
 import picture from '../../public/images/privatmegleren.webp';
@@ -12,7 +12,7 @@ import {
 import { IntlProvider } from 'react-intl';
 import { enUs, nbNo } from '../../assets/lang';
 import { darkTheme, lightTheme } from '../theme';
-import { ThemeProvider, CssBaseline } from '@mui/material'
+import { ThemeProvider, CssBaseline } from '@mui/material';
 
 const PrivatMegleren: NextPage = () => {
   const locale = useSelector(selectLocale);
@@ -21,14 +21,22 @@ const PrivatMegleren: NextPage = () => {
 
   const currentTheme = theme === 'light' ? lightTheme : darkTheme;
   const messages = { en: enUs, no: nbNo };
-  
-   return (
+
+  return (
     <ThemeProvider theme={currentTheme}>
       <CssBaseline />
-      <IntlProvider locale={locale} messages={messages[locale as keyof typeof messages]}>
+      <IntlProvider
+        locale={locale}
+        messages={messages[locale as keyof typeof messages]}
+      >
         <Header
-          headerLinks={['/privatmegleren', '/differpragma', '/diggit', '/bestatt']}
-          locale={locale} 
+          headerLinks={[
+            '/privatmegleren',
+            '/differpragma',
+            '/diggit',
+            '/bestatt',
+          ]}
+          locale={locale}
           theme={theme}
           subsite={true}
           updateLocale={(locale: string) => dispatch(updateLocale(locale))}
@@ -43,7 +51,7 @@ const PrivatMegleren: NextPage = () => {
         />
       </IntlProvider>
     </ThemeProvider>
-  )
+  );
 };
 
 export default PrivatMegleren;

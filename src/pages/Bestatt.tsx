@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { Header } from 'cv';
 import picture from '../../public/images/bestatt.webp';
@@ -12,7 +12,7 @@ import {
 import { IntlProvider } from 'react-intl';
 import { enUs, nbNo } from '../../assets/lang';
 import { darkTheme, lightTheme } from '../theme';
-import { ThemeProvider, CssBaseline } from '@mui/material'
+import { ThemeProvider, CssBaseline } from '@mui/material';
 
 const Bestatt: NextPage = () => {
   const locale = useSelector(selectLocale);
@@ -22,28 +22,36 @@ const Bestatt: NextPage = () => {
   const currentTheme = theme === 'light' ? lightTheme : darkTheme;
   const messages = { en: enUs, no: nbNo };
 
-   return (
+  return (
     <ThemeProvider theme={currentTheme}>
-    <CssBaseline />
-    <IntlProvider locale={locale} messages={messages[locale as keyof typeof messages]}>
-      <Header
-        headerLinks={['/privatmegleren', '/differpragma', '/diggit', '/bestatt']}
-        locale={locale} 
-        theme={theme}
-        subsite={true}
-        updateLocale={(locale: string) => dispatch(updateLocale(locale))}
-        toggleTheme={() => dispatch(toggleTheme())}
-      />
-      <Image
-        alt="bestått"
-        src={picture}
-        layout="responsive"
-        width={1729}
-        height={5768}
-      />
-    </IntlProvider>
-  </ThemeProvider>
-  )
+      <CssBaseline />
+      <IntlProvider
+        locale={locale}
+        messages={messages[locale as keyof typeof messages]}
+      >
+        <Header
+          headerLinks={[
+            '/privatmegleren',
+            '/differpragma',
+            '/diggit',
+            '/bestatt',
+          ]}
+          locale={locale}
+          theme={theme}
+          subsite={true}
+          updateLocale={(locale: string) => dispatch(updateLocale(locale))}
+          toggleTheme={() => dispatch(toggleTheme())}
+        />
+        <Image
+          alt="bestått"
+          src={picture}
+          layout="responsive"
+          width={1729}
+          height={5768}
+        />
+      </IntlProvider>
+    </ThemeProvider>
+  );
 };
 
 export default Bestatt;
