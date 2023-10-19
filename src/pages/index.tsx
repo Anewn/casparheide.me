@@ -4,7 +4,7 @@ import Image from 'next/legacy/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { profile } from '../../assets/data/index';
 import { enUs, nbNo } from '../../assets/lang';
-import image from '../../public/images/caspar-CV.webp';
+import image from '../../public/images/caspar.webp';
 import { categories } from '../categories';
 import {
   selectLocale,
