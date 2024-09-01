@@ -8,8 +8,8 @@
   "header.download": "Download",
 
   "profile.picture": "Profile picture",
-  "profile.jobTitle": "Senior UX Designer",
-  "profile.about.description": "As a passionate designer and illustrator, I have led key UX design projects, founded startups, and delved deeply into branding and visual communication. With a cross-disciplinary background that also encompasses team leadership and strategic planning, I see design as a bridge between the product and its users. Regardless of the challenge, I always place the user's needs and expectations at the core of my design process.",
+  "profile.jobTitle": "UX Designer",
+  "profile.about.description": "As a passionate designer and illustrator, I have contributed to various projects with UX and design, been involved in founding start-ups, and delved deeply into branding and visual communication. With an interdisciplinary background that also includes team leadership and strategic planning, I view design as a bridge between the product and its users. I always aim to place the user's needs and expectations at the core of my design process.",
   "profile.info.age": "{age} years old",
   "profile.info.location": "Oslo, Norway",
   "profile.references.description": "References and certificates are provided upon request.",
@@ -23,7 +23,7 @@
 
   "experience.posten.title": "UX Designer",
   "experience.posten.subtitle": "Posten",
-  "experience.posten.description": "As a UX Designer at Posten, I work with 'open parcel tracking' and 'my post'.",
+  "experience.posten.description": "As a UX Designer at Posten, I work with 'open tracking' and 'my page'.",
   "experience.posten.keywords": "UX, Design, Figma",
   
   "experience.antidiffer.title": "UX Designer",

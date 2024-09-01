@@ -22,6 +22,7 @@ import psychopath from '../../public/images/illustrasjoner/psychopath.webp';
 import what_a_carve_up_book_cover from '../../public/images/illustrasjoner/what_a_carve_up_book_cover.webp';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
+import { styled } from '@mui/system';  
 import { Header } from 'cv';
 import { IntlProvider } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
@@ -79,8 +80,12 @@ const Illustrasjoner: NextPage = () => {
     return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
-  const imageWidth = Math.min(windowDimensions.width * 0.8, 1200); // 80% of screen width, max 1200px
-  const imageHeight = windowDimensions.width < 600 ? windowDimensions.height * 0.7 : windowDimensions.height * 0.9;
+  const isMobile = windowDimensions.width <= 600;
+  const imageWidth = Math.min(windowDimensions.width * 0.9, 1200); // 90% of screen width, max 1200px
+  const imageHeight = isMobile ? windowDimensions.height * 0.8 : windowDimensions.height * 0.9; // 80% of screen height for mobile, 90% for larger screens
+
+  const mobileGap = 5; // Gap for mobile view
+  const webGap = 80; // Gap for web view
 
   return (
     <ThemeProvider theme={currentTheme}>
@@ -109,12 +114,12 @@ const Illustrasjoner: NextPage = () => {
           sx={{ 
             display: 'flex', 
             flexDirection: 'column', 
-            gap: {
-              xs: '40px',  // for extra-small screens
-              sm: '60px',  // for small screens
-              md: '80px',  // for medium and larger screens
-            },
             py: {
+              xs: '20px',
+              sm: '30px',
+              md: '40px',
+            },
+            px: {
               xs: '20px',
               sm: '30px',
               md: '40px',
@@ -122,23 +127,28 @@ const Illustrasjoner: NextPage = () => {
           }}
         >
           {illustrasjoner.map((illus, index) => (
-            <Box 
-              key={index} 
-              sx={{ 
+            <Box
+              key={index}
+              sx={{
                 height: {
-                  xs: '300px',  // fixed height for mobile
-                  sm: `${imageHeight}px`,  // dynamic height for larger screens
+                  xs: `calc(100vh - 64px)`, // Adjust 64px if your header height is different
+                  sm: `${imageHeight}px`,
                 },
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                paddingBottom: isMobile ? `${mobileGap}px` : `${webGap}px`,
+                '&:last-child': {
+                  paddingBottom: 0,
+                },
               }}
             >
               <Box
                 sx={{
                   position: 'relative',
-                  width: `${imageWidth}px`,
+                  width: '100%',
                   height: '100%',
+                  maxWidth: `${imageWidth}px`,
                 }}
               >
                 <Image
@@ -146,6 +156,7 @@ const Illustrasjoner: NextPage = () => {
                   src={illus.src}
                   layout="fill"
                   objectFit="contain"
+                  priority={index === 0}
                 />
               </Box>
             </Box>
