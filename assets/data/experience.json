@@ -1,6 +1,14 @@
 [
   {
+    "startYear": 2023,
+    "title": "experience.posten.title",
+    "subtitle": "experience.posten.subtitle",
+    "description": "experience.posten.description",
+    "keywords": "experience.posten.keywords"
+  },
+  {
     "startYear": 2022,
+    "endYear":2023,
     "title": "experience.antidiffer.title",
     "subtitle": "experience.antidiffer.subtitle",
     "description": "experience.antidiffer.description",

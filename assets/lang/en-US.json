@@ -20,6 +20,11 @@
   "categories.other": "Other",
   "categories.lookingFor": "What I'm Looking For",
   "categories.gallery": "Gallery",
+
+  "experience.posten.title": "UX Designer",
+  "experience.posten.subtitle": "Posten",
+  "experience.posten.description": "As a UX Designer at Posten, I work with 'open parcel tracking' and 'my post'.",
+  "experience.posten.keywords": "UX, Design, Figma",
   
   "experience.antidiffer.title": "UX Designer",
   "experience.antidiffer.subtitle": "AntiDiffer/Differ Pragma",

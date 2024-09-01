@@ -79,9 +79,8 @@ const Illustrasjoner: NextPage = () => {
     return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
-  const imageWidth = Math.min(windowDimensions.width * 0.8, 1200); // 80% av skjermbredden, maks 1200px
-  const imageHeight = windowDimensions.height * 0.9; // 90% av skjermhøyden
-  const gapBetweenImages = 80; // Avstand mellom bilder i piksler
+  const imageWidth = Math.min(windowDimensions.width * 0.8, 1200); // 80% of screen width, max 1200px
+  const imageHeight = windowDimensions.width < 600 ? windowDimensions.height * 0.7 : windowDimensions.height * 0.9;
 
   return (
     <ThemeProvider theme={currentTheme}>
@@ -110,15 +109,26 @@ const Illustrasjoner: NextPage = () => {
           sx={{ 
             display: 'flex', 
             flexDirection: 'column', 
-            gap: `${gapBetweenImages}px`,
-            py: `${gapBetweenImages / 2}px` // Legg til padding på topp og bunn
+            gap: {
+              xs: '40px',  // for extra-small screens
+              sm: '60px',  // for small screens
+              md: '80px',  // for medium and larger screens
+            },
+            py: {
+              xs: '20px',
+              sm: '30px',
+              md: '40px',
+            }
           }}
         >
           {illustrasjoner.map((illus, index) => (
             <Box 
               key={index} 
               sx={{ 
-                height: `${imageHeight}px`,
+                height: {
+                  xs: '300px',  // fixed height for mobile
+                  sm: `${imageHeight}px`,  // dynamic height for larger screens
+                },
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
