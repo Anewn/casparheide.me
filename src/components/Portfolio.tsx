@@ -38,6 +38,7 @@ const Portfolio = ({ picture, alt }: PortfolioProps) => {
             '/differ-pragma',
             '/diggit',
             '/bestatt',
+            '/illustrasjoner',
           ]}
           locale={locale}
           theme={theme}
